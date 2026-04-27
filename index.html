@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NexaTop – Top Up Game Premium</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Background Blobs -->
+  <div class="bg-blob blob-1"></div>
+  <div class="bg-blob blob-2"></div>
+  <div class="bg-blob blob-3"></div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <div class="logo">
+        <span class="logo-icon">⚡</span>
+        <span class="logo-text">Nexa<span class="logo-accent">Top</span></span>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link active">Beranda</a></li>
+        <li><a href="#games" class="nav-link">Games</a></li>
+        <li><a href="#topup" class="nav-link">Top Up</a></li>
+        <li><a href="#cara" class="nav-link">Cara Beli</a></li>
+        <li><a href="#kontak" class="nav-link">Kontak</a></li>
+      </ul>
+      <div class="nav-right">
+        <button class="btn-nav" onclick="scrollToTopup()">Top Up Sekarang</button>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <div class="hero-badge">🎮 Platform Top Up #1 Terpercaya</div>
+      <h1 class="hero-title">
+        Top Up Game<br />
+        <span class="gradient-text">Instan & Aman</span>
+      </h1>
+      <p class="hero-desc">
+        Diamond, Voucher, dan Item premium untuk Free Fire & Mobile Legends.<br />
+        Proses cepat, harga terjangkau, 24/7 siap melayani.
+      </p>
+      <div class="hero-btns">
+        <button class="btn-primary" onclick="scrollToTopup()">Mulai Top Up</button>
+        <button class="btn-ghost" onclick="scrollToGames()">Lihat Game</button>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-num" data-target="50000">0</span><span>+</span>
+          <span class="stat-label">Transaksi</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num" data-target="99">0</span><span>%</span>
+          <span class="stat-label">Kepuasan</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num" data-target="24">0</span><span>/7</span>
+          <span class="stat-label">Support</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="floating-card card-ff">
+        <img src="https://placehold.co/60x60/ff6b35/fff?text=FF" alt="Free Fire" class="game-icon-img" />
+        <div>
+          <div class="card-game-name">Free Fire</div>
+          <div class="card-game-tag">Diamonds tersedia</div>
+        </div>
+      </div>
+      <div class="hero-orb">
+        <div class="orb-inner">
+          <span class="orb-emoji">⚡</span>
+        </div>
+      </div>
+      <div class="floating-card card-ml">
+        <img src="https://placehold.co/60x60/4f6ef7/fff?text=ML" alt="Mobile Legends" class="game-icon-img" />
+        <div>
+          <div class="card-game-name">Mobile Legends</div>
+          <div class="card-game-tag">Diamonds tersedia</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GAMES SECTION -->
+  <section class="games-section" id="games">
+    <div class="section-header">
+      <span class="section-badge">🕹️ Pilih Game</span>
+      <h2 class="section-title">Game <span class="gradient-text">Tersedia</span></h2>
+      <p class="section-desc">Pilih game favoritmu dan mulai top up sekarang</p>
+    </div>
+    <div class="games-grid">
+      <!-- Free Fire Card -->
+      <div class="game-card" id="card-ff" onclick="selectGame('ff')">
+        <div class="game-card-glow glow-ff"></div>
+        <div class="game-card-inner">
+          <div class="game-badge-wrap">
+            <div class="game-badge badge-ff">
+              <span class="badge-icon">🔥</span>
+            </div>
+          </div>
+          <h3 class="game-card-title">Free Fire</h3>
+          <p class="game-card-sub">Garena Free Fire</p>
+          <div class="game-items">
+            <span class="item-tag">💎 Diamonds</span>
+            <span class="item-tag">🛡️ Membership</span>
+            <span class="item-tag">🎁 Bundle</span>
+          </div>
+          <div class="game-card-footer">
+            <span class="price-from">Mulai dari</span>
+            <span class="price-val">Rp 2.000</span>
+          </div>
+          <button class="btn-game-select">Pilih Game →</button>
+        </div>
+      </div>
+
+      <!-- Mobile Legends Card -->
+      <div class="game-card" id="card-ml" onclick="selectGame('ml')">
+        <div class="game-card-glow glow-ml"></div>
+        <div class="game-card-inner">
+          <div class="game-badge-wrap">
+            <div class="game-badge badge-ml">
+              <span class="badge-icon">⚔️</span>
+            </div>
+          </div>
+          <h3 class="game-card-title">Mobile Legends</h3>
+          <p class="game-card-sub">Bang Bang</p>
+          <div class="game-items">
+            <span class="item-tag">💎 Diamonds</span>
+            <span class="item-tag">👑 Starlight</span>
+            <span class="item-tag">🎭 Skin</span>
+          </div>
+          <div class="game-card-footer">
+            <span class="price-from">Mulai dari</span>
+            <span class="price-val">Rp 2.000</span>
+          </div>
+          <button class="btn-game-select">Pilih Game →</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOP UP SECTION -->
+  <section class="topup-section" id="topup">
+    <div class="section-header">
+      <span class="section-badge">⚡ Top Up</span>
+      <h2 class="section-title">Form <span class="gradient-text">Top Up</span></h2>
+      <p class="section-desc">Isi data dengan benar dan pilih nominal</p>
+    </div>
+
+    <!-- Game Tabs -->
+    <div class="game-tabs">
+      <button class="tab-btn active" id="tab-ff" onclick="switchTab('ff')">
+        🔥 Free Fire
+      </button>
+      <button class="tab-btn" id="tab-ml" onclick="switchTab('ml')">
+        ⚔️ Mobile Legends
+      </button>
+    </div>
+
+    <div class="topup-wrapper">
+      <!-- Form Panel -->
+      <div class="topup-form-panel">
+        <!-- Free Fire Form -->
+        <div class="game-form" id="form-ff">
+          <div class="form-header-game">
+            <span class="fh-icon">🔥</span>
+            <div>
+              <div class="fh-title">Free Fire</div>
+              <div class="fh-sub">Masukkan User ID kamu</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">User ID Free Fire</label>
+            <input type="text" class="form-input" id="ff-uid" placeholder="Contoh: 123456789" oninput="validateInput('ff')" />
+            <span class="form-hint">ID dapat dilihat di profil game</span>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Pilih Nominal Diamond</label>
+            <div class="nominal-grid" id="nominal-ff">
+              <!-- JS akan inject nominal -->
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Metode Pembayaran</label>
+            <div class="payment-grid">
+              <div class="payment-opt selected" onclick="selectPayment(this)">
+                <span>💳</span> Transfer Bank
+              </div>
+              <div class="payment-opt" onclick="selectPayment(this)">
+                <span>📱</span> QRIS
+              </div>
+              <div class="payment-opt" onclick="selectPayment(this)">
+                <span>🏪</span> Minimarket
+              </div>
+              <div class="payment-opt" onclick="selectPayment(this)">
+                <span>💰</span> E-Wallet
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile Legends Form -->
+        <div class="game-form hidden" id="form-ml">
+          <div class="form-header-game">
+            <span class="fh-icon">⚔️</span>
+            <div>
+              <div class="fh-title">Mobile Legends</div>
+              <div class="fh-sub">Masukkan User ID & Zone ID kamu</div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">User ID</label>
+              <input type="text" class="form-input" id="ml-uid" placeholder="Contoh: 123456789" oninput="validateInput('ml')" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Zone ID</label>
+              <input type="text" class="form-input" id="ml-zone" placeholder="Contoh: 1234" oninput="validateInput('ml')" />
+            </div>
+          </div>
+          <span class="form-hint" style="margin-top:-10px;display:block">ID dapat dilihat di profil → Akun</span>
+          <div class="form-group" style="margin-top:18px">
+            <label class="form-label">Pilih Nominal Diamond</label>
+            <div class="nominal-grid" id="nominal-ml">
+              <!-- JS inject -->
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Metode Pembayaran</label>
+            <div class="payment-grid">
+              <div class="payment-opt selected" onclick="selectPayment(this)">
+                <span>💳</span> Transfer Bank
+              </div>
+              <div class="payment-opt" onclick="selectPayment(this)">
+                <span>📱</span> QRIS
+              </div>
+              <div class="payment-opt" onclick="selectPayment(this)">
+                <span>🏪</span> Minimarket
+              </div>
+              <div class="payment-opt" onclick="selectPayment(this)">
+                <span>💰</span> E-Wallet
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="btn-order" id="btn-order" onclick="placeOrder()" disabled>
+          <span class="btn-order-text">⚡ Beli Sekarang</span>
+        </button>
+      </div>
+
+      <!-- Summary Panel -->
+      <div class="summary-panel">
+        <div class="summary-title">📋 Ringkasan Pesanan</div>
+        <div class="summary-body" id="summary-body">
+          <div class="summary-empty">
+            <span class="empty-icon">🛒</span>
+            <p>Pilih nominal untuk melihat ringkasan pesanan</p>
+          </div>
+        </div>
+        <div class="summary-promo">
+          <input type="text" class="promo-input" placeholder="Kode Promo (opsional)" id="promo-input" />
+          <button class="btn-promo" onclick="applyPromo()">Pakai</button>
+        </div>
+        <div class="summary-footer" id="summary-footer" style="display:none">
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <span id="s-subtotal">-</span>
+          </div>
+          <div class="summary-row promo-row" id="s-promo-row" style="display:none">
+            <span>Diskon Promo</span>
+            <span id="s-discount" class="discount-text">-</span>
+          </div>
+          <div class="summary-row total-row">
+            <span>Total</span>
+            <span id="s-total" class="total-val">-</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARA BELI -->
+  <section class="cara-section" id="cara">
+    <div class="section-header">
+      <span class="section-badge">📖 Panduan</span>
+      <h2 class="section-title">Cara <span class="gradient-text">Membeli</span></h2>
+      <p class="section-desc">Proses top up mudah hanya dalam 4 langkah</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">01</div>
+        <div class="step-icon">🎮</div>
+        <h4 class="step-title">Pilih Game</h4>
+        <p class="step-desc">Pilih game yang ingin kamu top up, Free Fire atau Mobile Legends</p>
+      </div>
+      <div class="step-arrow">→</div>
+      <div class="step-card">
+        <div class="step-num">02</div>
+        <div class="step-icon">🆔</div>
+        <h4 class="step-title">Isi User ID</h4>
+        <p class="step-desc">Masukkan User ID game kamu dengan benar agar item terkirim tepat</p>
+      </div>
+      <div class="step-arrow">→</div>
+      <div class="step-card">
+        <div class="step-num">03</div>
+        <div class="step-icon">💎</div>
+        <h4 class="step-title">Pilih Nominal</h4>
+        <p class="step-desc">Pilih jumlah diamond atau item yang kamu butuhkan sesuai budget</p>
+      </div>
+      <div class="step-arrow">→</div>
+      <div class="step-card">
+        <div class="step-num">04</div>
+        <div class="step-icon">✅</div>
+        <h4 class="step-title">Bayar & Selesai</h4>
+        <p class="step-desc">Lakukan pembayaran dan diamond langsung masuk ke akunmu</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- KEUNGGULAN -->
+  <section class="keunggulan-section">
+    <div class="section-header">
+      <span class="section-badge">⭐ Mengapa Kami</span>
+      <h2 class="section-title">Keunggulan <span class="gradient-text">NexaTop</span></h2>
+    </div>
+    <div class="keunggulan-grid">
+      <div class="keunggulan-card">
+        <div class="k-icon">⚡</div>
+        <h4>Proses Instan</h4>
+        <p>Diamond masuk dalam hitungan detik setelah pembayaran dikonfirmasi</p>
+      </div>
+      <div class="keunggulan-card">
+        <div class="k-icon">🔒</div>
+        <h4>100% Aman</h4>
+        <p>Sistem keamanan berlapis, data dan transaksi kamu terlindungi</p>
+      </div>
+      <div class="keunggulan-card">
+        <div class="k-icon">💰</div>
+        <h4>Harga Terbaik</h4>
+        <p>Harga kompetitif dengan berbagai pilihan nominal yang fleksibel</p>
+      </div>
+      <div class="keunggulan-card">
+        <div class="k-icon">🎧</div>
+        <h4>Support 24/7</h4>
+        <p>Tim kami siap membantu kamu kapan saja, 7 hari seminggu</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- KONTAK / FOOTER -->
+  <footer class="footer" id="kontak">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="logo">
+          <span class="logo-icon">⚡</span>
+          <span class="logo-text">Nexa<span class="logo-accent">Top</span></span>
+        </div>
+        <p class="footer-tagline">Platform top up game terpercaya untuk semua gamer Indonesia.</p>
+        <div class="social-links">
+          <a href="#" class="social-btn">📘 Facebook</a>
+          <a href="#" class="social-btn">📸 Instagram</a>
+          <a href="#" class="social-btn">💬 WhatsApp</a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h5>Game</h5>
+          <a href="#">Free Fire</a>
+          <a href="#">Mobile Legends</a>
+          <a href="#">PUBG Mobile</a>
+          <a href="#">Genshin Impact</a>
+        </div>
+        <div class="footer-col">
+          <h5>Informasi</h5>
+          <a href="#">Cara Pembelian</a>
+          <a href="#">Syarat & Ketentuan</a>
+          <a href="#">Kebijakan Privasi</a>
+          <a href="#">FAQ</a>
+        </div>
+        <div class="footer-col">
+          <h5>Kontak</h5>
+          <a href="#">📧 nexatop@gmail.com</a>
+          <a href="#">📱 +62 812-3456-7890</a>
+          <a href="#">💬 Live Chat</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 NexaTop. Dibuat dengan ❤️ untuk para Gamer Indonesia.</p>
+    </div>
+  </footer>
+
+  <!-- Modal Sukses -->
+  <div class="modal-overlay" id="modal-overlay" onclick="closeModal()">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <div class="modal-icon">🎉</div>
+      <h3 class="modal-title">Pesanan Berhasil!</h3>
+      <p class="modal-desc" id="modal-desc">Top up kamu sedang diproses.</p>
+      <div class="modal-detail" id="modal-detail"></div>
+      <button class="btn-primary" onclick="closeModal()" style="width:100%;margin-top:8px">Tutup</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
